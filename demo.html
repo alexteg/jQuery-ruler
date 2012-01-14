@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Ruler demo</title>
+	<title>jQuery Ruler demo</title>
 	<link rel="stylesheet" href="css/jquery.ruler.css" type="text/css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.ruler.js"></script>
+	<script type="text/javascript" src="js/jquery.ruler.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#ruler').ruler();
+		/* Enable ruler with all the options and their default values */
+		$('#ruler').ruler({
+			minWidth:	30,
+			maxWidth:	screen.width,
+			width:		300,
+			draggable:	true,
+			resizable:	true,
+			autoResize:	false
+		});
 	});
 	</script>
 </head>
 <body>
 	<div id="ruler"></div>
-	Test
 </body>
 </html>

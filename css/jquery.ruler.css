@@ -2,48 +2,55 @@
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	min-width: 30px;
 	width: 300px;
 	height: 22px;
+	color: black;
 	background: whiteSmoke;
 	border: 1px solid #ccc;
+	border-right: 0;
 	overflow: hidden;
-	cursor: move;
+	z-index: 1000;
 	-webkit-user-select: none;
 	-moz-user-select: none;
-	/*-moz-box-shadow: 0px 0px 2px #999;
-	-webkit-box-shadow: 0px 0px 2px #999;
-	box-shadow: 0px 0px 2px #999;*/
 }
 
-.ruler.rotated {
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	writing-mode: tb-rl;
+.ruler.ruler-draggable {
+	cursor: move;
+}
+
+.ruler .ruler-resize {
+	position: absolute;
+	width: 10px;
+	height: 22px;
+	background: transparent;
+	z-index: 1001;
+	right: 0;
+	cursor: e-resize;
 }
 
 .ruler .ruler-wrapper {
 	position: relative;
+	height: 100%;
 }
 
-.ruler .ruler-two_px, .ruler .ruler-ten_px {
+.ruler .ruler-small_line, .ruler .ruler-medium_line, .ruler .ruler-large_line {
 	width: 1px;
-	height: 10px;
+	height: 30%;
 	border-right: 1px solid #ccc;
 	position: absolute;
-	top: 15px;
+	bottom: 0;
 }
 
-.ruler .ruler-ten_px {
-	height: 12px;
-	top: 10px;
-	border-right: 1px solid grey;
+.ruler .ruler-medium_line {
+	height: 50%;
+	top: auto;
+	border-right: 1px solid #999;
 }
 
-.ruler .ruler-twenty_px {
-	height: 22px;
+.ruler .ruler-large_line {
+	height: 100%;
 	top: 0px;
+	border-right: 1px solid #777;
 }
 
 .ruler .ruler-label {
@@ -51,10 +58,5 @@
 	width: 20px;
 	height: 7px;
 	font-size: 8px;
-	color: black;
 	text-align: left;
-}
-
-.ruler .ruler-resize {
-	width: 15px;
 }
